@@ -159,44 +159,44 @@ R => Read
 U => Update
 D => Delete
 
-Project TODO
-Steps
+### Project TODO
+Steps:
 1. Create Database
 2. Create Collection of tasks
 3. Todos -> CRUD
    
-Open CMD or Terminal then type **mongosh** as a command to run mongosh shell
+Open CMD or Terminal then type `mongosh` as a command to run mongosh shell
 ![alt text](image-5.png)
         
-Press **Ctrl+L** to clear all unwanted info
+Press `Ctrl+L` to clear all unwanted info
 ![alt text](image-6.png)
 
 For creating new database use below command
-        **use dbname**
+`use dbname`
 if entered db exist then the existing database will be opened in terminal
 
-if there is no database existing in that name then mongosh will create a new database 
+if there is no database existing in that name then mongosh will create a new database<br>
 Creating a database **my-todos-db**
 ![alt text](image-7.png)
 The my-todos-db named database created successfully and opened in the terminal
 
 check is that the database contains any collections
 use this command
-        show collections
+`show collections`
 ![alt text](image-8.png)
 No collections are found
 
 create new collection
-        db.createCollection("collectionName")
-
+`db.createCollection("collectionName")
+`
 db indicates => my-todo-db named Database
 ![alt text](image-9.png)
-{ok:1} means todos collection created successfully
+**{ok:1}** means todos collection created successfully
 
 insert or add task to todos collection
 ![alt text](image-10.png)
 
-see all records present in todos collection
+see all records present in todos collection using `db.todos.find()`
 ![alt text](image-11.png)
 here mongodb automatically insterted a new _id when added or inserted new task
 So we dont need to add explicitly any id
