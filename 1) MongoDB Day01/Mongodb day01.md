@@ -181,6 +181,7 @@ if entered db exist then the existing database will be opened in terminal
 
 if there is no database existing in that name then mongosh will create a new database<br>
 Creating a database named with **my-todos-db**
+so command will be **use my-todos-db**
 ![alt text](image-7.png)
 The **my-todos-db** named database created successfully and opened in the terminal
 
@@ -210,3 +211,34 @@ Practice:
 1) check how many collections present in this db.
 2) add another task in todos collection
 3)  Check all task in todos collection
+
+| **Operation**                                                  | **Description**                                                                                                                                                 |
+|----------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1) show dbs                                                    | Display all existing databases in MongoDB.                                                                                                                     |
+| 2) use raju-students                                           | Creates a new database named `raju-students` or switches to an existing one with the same name.                                                                 |
+| 3) show collections                                            | Shows all collections in the current database.                                                                                                                 |
+| 4) db.createCollection("students")                             | Creates a collection named `students` within the current database.                                                                                              |
+| 5) db.students.insertOne({"name":"rashed","age":25,"skills":["html","css","js"]}) | Inserts a single record/document into the `students` collection.                                                                                                 |
+| 6) db.students.find()                                          | Displays all existing record/documents within the `students` collection.                                                                                         |
+| 7) db.students.find().count()                                  | Displays the total number of existing record/documents within the `students` collection.                                                                         |
+| 9) db.students.find({"name": "Rimon"})                        | Displays an array of matched records based on the provided name.                                                                                                |
+| findOne(findOne only displays the 1st occurrence of record)   |                                                                                                                                                                 |
+| 10) db.students.findOne({ "name": "Rimon" })                  | Displays the first occurrence of a record with the specified name field.                                                                                         |
+| updateOne(updateOne only updates the 1st occurrence of record)|                                                                                                                                                                 |
+| 11) db.students.updateOne({"_id": ObjectId('65f445833b30b500c74babb4')},{$set:{"age":21}}) | Updates the existing field value within a specific existing record or inserts a new field with the given value.                                                  |
+| 12) db.students.updateOne({"name": "Rimon"},{$set:{"unknown":21}}) | Inserts a new field and value within the first occurrence of an existing record based on the specified name field.                                               |
+| deleteOne(deleteOne only deletes the 1st occurrence of record)|                                                                                                                                                                 |
+| 13) db.students.deleteOne({ "name": "Rimon" })                | Deletes existing records based on the specified name field.                                                                                                     |
+| 14) db.students.insertMany([...])                             | Inserts multiple record/documents into the `students` collection.                                                                                               |
+| 15) db.students.updateMany({},{$set:{"isMarried":false}})     | Inserts the new field `{isMarried: false}` to all existing records or updates the value of `isMarried` for those which already have the `isMarried` field.    |
+| 16) db.students.find({"hobbies":"cricket"})                   | Displays an array of records containing "cricket" as a hobby.                                                                                                    |
+| 17) db.students.find({},{"name":1})                           | Displays `{name: value, _id: value}` of all records as an array.                                                                                                |
+| 18) db.students.find({},{"name":1,"_id":0})                   | Displays `{name: value}` of all records as an array.                                                                                                            |
+| 19) db.students.find({"experience.company":"Pathao"})          | Finds all records where the company is "Pathao".                                                                                                                 |
+| 20) db.students.find().sort({"age":1})                        | Sorts all records by age in ascending order.                                                                                                                     |
+| 21) db.students.find({"age":{$eq: 25}})                       | Fetches records where age equals 25.                                                                                                                            |
+| 22) db.students.find({"age":{$ne: 25}})                       | Fetches records where age is not equal to 25.                                                                                                                   |
+| 23) db.students.find({"age":{$gte: 25}})                      | Fetches records where age is greater than or equal to 25.                                                                                                        |
+| 24) db.students.find({"age":{$lte: 25}})                      | Fetches records where age is less than or equal to 25.                                                                                                          |
+| 25) `db.students.find({$and:[{"age":{$gte: 20}}, {"age":{$lte: 30}}]})` | Fetches records where age is between 20 and 30.                                                                                                                 |
+| 26) `db.students.find({$or:[{"age":{$gte: 25}}, {"age":{$lte: 30}}]})`  | Fetches records where age is greater than or equal to 25 or less than or equal to 30.                                                                           |
